@@ -3,8 +3,8 @@
 # */AIPND-revision/intropyproject-classify-pet-images/check_images.py
 #
 # TODO 0: Add your information below for Programmer & Date Created.                                                                             
-# PROGRAMMER: 
-# DATE CREATED:                                  
+# PROGRAMMER: Julien Blocman
+# DATE CREATED: May 25, 2021
 # REVISED DATE: 
 # PURPOSE: Classifies pet images using a pretrained CNN model, compares these
 #          classifications to the true identity of the pets in the images, and
@@ -36,6 +36,7 @@ from classify_images import classify_images
 from adjust_results4_isadog import adjust_results4_isadog
 from calculates_results_stats import calculates_results_stats
 from print_results import print_results
+
 
 # Main program function defined below
 def main():
