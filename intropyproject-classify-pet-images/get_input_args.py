@@ -52,5 +52,3 @@ def get_input_args():
                         help='text file of names of dog breeds - default: dognames.txt')
 
     return parser.parse_args()
-
-get_input_args()
