@@ -79,7 +79,7 @@ def get_pet_labels(image_dir):
                 if add_letter==0:
                     pet_label=pet_label + file_name[i]
 
-            pet_label = pet_label[0:len(pet_label)-1].lower()
+            pet_label = pet_label[0:len(pet_label)-1].lower().replace("_"," ")
 
             # If filename doesn't already exist in dictionary add it and it's
             # pet label - otherwise print an error message because indicates
