@@ -62,5 +62,43 @@ def print_results(results_dic, results_stats_dic, model,
     Returns:
            None - simply printing results.
     """    
-    None
-                
+
+    print("Out of {} images, incuding {} images of dogs, the CNN model {} correctly classified:"
+          .format(results_stats_dic['n_images'],
+                  results_stats_dic['n_dogs_img'],
+                  model))
+    print("{}% of the dogs, {}% of the breed, and {}% of the non-dogs"
+          .format(results_stats_dic['pct_correct_dogs'],
+                  results_stats_dic['pct_correct_breed'],
+                  results_stats_dic['pct_correct_notdogs']))
+
+    if print_incorrect_dogs:
+
+        wrong_dogs = {}
+
+        for key in results_dic:
+            if results_dic[key][3] == 1 and results_dic[key][4] == 0:
+                wrong_dogs[results_dic[key][0]] = wrong_dogs. get(results_dic[key][0], 0) + 1
+
+        for mistake in wrong_dogs:
+            if wrong_dogs[mistake] == 1:
+                print("There was 1 image of {} not identified as a dog".format(mistake))
+            else:
+                print("There were {} images of {} not identified as dogs".format(wrong_dogs[mistake], mistake))
+
+
+    if print_incorrect_breed:
+
+        wrong_breed = {}
+
+        for key in results_dic:
+            if results_dic[key][3] == 1 and results_dic[key][4] == 1 and results_dic[key][2] == 0:
+                wrong_breed[results_dic[key][0]] = wrong_breed. get(results_dic[key][0], 0) + 1
+
+        for mistake in wrong_breed:
+            if wrong_breed[mistake] == 1:
+                print("There was 1 image of {} identified as another breed".format(mistake))
+            else:
+                print("There were {} images of {} identified as another breed".format(wrong_dogs[mistake], mistake))
+
+
