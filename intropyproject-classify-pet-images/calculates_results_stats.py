@@ -69,5 +69,32 @@ def calculates_results_stats(results_dic):
                      on how to calculate the counts and statistics.
     """        
     # Replace None with the results_stats_dic dictionary that you created with 
-    # this function 
-    return None
+    # this function
+
+    # create an empty dictionary results_stats_dic
+
+    results_stats_dic = {}
+
+    # update the stats by counting the results in results_dic
+
+    for key in results_dic:
+        results_stats_dic['n_images'] = results_stats_dic.get('n_images', 0) + 1
+        results_stats_dic['n_dogs_img'] = results_stats_dic.get('n_dogs_img', 0) + results_dic[key][3]
+        results_stats_dic['n_notdogs_img'] = results_stats_dic.get('n_notdogs_img', 0) + (1 - results_dic[key][3])
+        results_stats_dic['n_match'] = results_stats_dic.get('n_match', 0) + results_dic[key][2]
+        if results_dic[key][3] == 1 and results_dic[key][4] == 1:
+            results_stats_dic['n_correct_dogs'] = results_stats_dic.get('n_correct_dogs', 0) + 1
+        if results_dic[key][3] == 0 and results_dic[key][4] == 0:
+            results_stats_dic['n_correct_notdogs'] = results_stats_dic.get('n_correct_notdogs', 0) + 1
+        if results_dic[key][3] == 1 and results_dic[key][2] == 1:
+            results_stats_dic['n_correct_breed'] = results_stats_dic.get('n_correct_breed', 0) + 1
+
+    # update the stats at the dictionary level by using the stats already calculated
+
+    results_stats_dic['pct_match'] = 100.0 * results_stats_dic['n_match'] / results_stats_dic['n_images']
+    results_stats_dic['pct_correct_dogs'] = 100.0 * results_stats_dic['n_correct_dogs'] / results_stats_dic['n_dogs_img']
+    results_stats_dic['pct_correct_breed'] = 100.0 * results_stats_dic['n_correct_breed'] / results_stats_dic['n_dogs_img']
+    results_stats_dic['pct_correct_notdogs'] = 100.0 * results_stats_dic['n_correct_notdogs'] / results_stats_dic['n_notdogs_img']
+
+    return results_stats_dic
+
