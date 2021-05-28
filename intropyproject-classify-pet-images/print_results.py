@@ -99,6 +99,6 @@ def print_results(results_dic, results_stats_dic, model,
             if wrong_breed[mistake] == 1:
                 print("There was 1 image of {} identified as another breed".format(mistake))
             else:
-                print("There were {} images of {} identified as another breed".format(wrong_dogs[mistake], mistake))
+                print("There were {} images of {} identified as another breed".format(wrong_breed[mistake], mistake))
 
 

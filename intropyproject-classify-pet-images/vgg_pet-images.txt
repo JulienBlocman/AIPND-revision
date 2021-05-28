@@ -320,4 +320,4 @@ Out of 40 images, incuding 30 images of dogs, the CNN model vgg correctly classi
 There was 1 image of beagle identified as another breed
 There was 1 image of great pyrenees identified as another breed
 
-** Total Elapsed Runtime: 0:0:10
+** Total Elapsed Runtime: 0:0:9

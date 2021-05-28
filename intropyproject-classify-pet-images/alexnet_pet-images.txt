@@ -317,3 +317,9 @@ N Images: 40  N Dog Images: 30  N NotDog Images: 10
 Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:  80.0
 Out of 40 images, incuding 30 images of dogs, the CNN model alexnet correctly classified:
 100.0% of the dogs, 80.0% of the breed, and 100.0% of the non-dogs
+There were 2 images of beagle identified as another breed
+There was 1 image of boston terrier identified as another breed
+There were 2 images of golden retriever identified as another breed
+There was 1 image of great pyrenees identified as another breed
+
+** Total Elapsed Runtime: 0:0:1
