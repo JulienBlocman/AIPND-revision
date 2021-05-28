@@ -1,0 +1,63 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = vgg 
+ dogfile = dognames.txt
+
+Pet Image Label Dictionary has 4 key-value pairs.
+Below are 4 of them:
+ 1 key:               Dalmatian_01.jpg  label:                  dalmatian
+ 2 key:               Dalmatian_02.jpg  label:                  dalmatian
+ 3 key:                   Koala_01.jpg  label:                      koala
+ 4 key:          stuffed_animal_01.jpg  label:             stuffed animal
+
+     MATCH:
+
+              Dalmatian_01.jpg: 
+Real:                  dalmatian   Classifier: dalmatian, coach dog, carriage dog
+
+              Dalmatian_02.jpg: 
+Real:                  dalmatian   Classifier: dalmatian, coach dog, carriage dog
+
+                  Koala_01.jpg: 
+Real:                      koala   Classifier: koala, koala bear, kangaroo bear, native bear, phascolarctos cinereus
+
+ NOT A MATCH:
+
+         stuffed_animal_01.jpg: 
+Real:             stuffed animal   Classifier: platypus, duckbill, duckbilled platypus, duck-billed platypus, ornithorhynchus anatinus
+
+# Total Images 4 # Matches: 3 # NOT Matches: 1
+
+     MATCH:
+
+              Dalmatian_01.jpg: 
+Real:                  dalmatian   Classifier: dalmatian, coach dog, carriage dog  
+PetLabelDog: 1  ClassLabelDog: 1
+
+              Dalmatian_02.jpg: 
+Real:                  dalmatian   Classifier: dalmatian, coach dog, carriage dog  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                  Koala_01.jpg: 
+Real:                      koala   Classifier: koala, koala bear, kangaroo bear, native bear, phascolarctos cinereus  
+PetLabelDog: 0  ClassLabelDog: 0
+
+ NOT A MATCH:
+
+         stuffed_animal_01.jpg: 
+Real:             stuffed animal   Classifier: platypus, duckbill, duckbilled platypus, duck-billed platypus, ornithorhynchus anatinus  
+PetLabelDog: 0  ClassLabelDog: 0
+
+# Total Images 4 # Matches: 3 # NOT Matches: 1
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed: 100.0
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed: 100.0
+Out of 4 images, incuding 2 images of dogs, the CNN model vgg correctly classified:
+100.0% of the dogs, 100.0% of the breed, and 100.0% of the non-dogs
+
+** Total Elapsed Runtime: 0:0:0
